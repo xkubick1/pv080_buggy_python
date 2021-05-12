@@ -1,6 +1,6 @@
 # contains bunch of buggy examples
 # taken from https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
-import cPickle
+# import cPickle
 import subprocess
 import base64
 import subprocess
@@ -23,8 +23,6 @@ def assertAdmin(request, user):
 class RunBinSh(object):
     def __reduce__(self):
         return (subprocess.Popen, (('/bin/sh',),))
-    def fakeMethod(self):
-        return 3
 
 
 @app.route('/')
