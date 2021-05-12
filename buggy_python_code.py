@@ -14,7 +14,7 @@ def transcode_file(request, filename):
 
 
 # Assert statements
-def foo(request, user):
+def assertAdmin(request, user):
     assert user.is_admin, 'user does not have access'
     # secure code...
 
@@ -23,6 +23,8 @@ def foo(request, user):
 class RunBinSh(object):
     def __reduce__(self):
         return (subprocess.Popen, (('/bin/sh',),))
+    def fakeMethod(self):
+        return 3
 
 
 @app.route('/')
